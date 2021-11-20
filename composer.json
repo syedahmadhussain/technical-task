@@ -21,6 +21,8 @@
         "symfony/yaml": "5.2.*"
     },
     "require-dev": {
+        "mockery/mockery": "^1.4",
+        "phpunit/phpunit": "^9.5",
         "symfony/maker-bundle": "^1.33"
     },
     "config": {

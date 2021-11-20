@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\ValueObject;
 
-class Coordinates
+final class Coordinates
 {
     private float $lat;
     private float $lng;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\ResolvedAddressRepository;
@@ -18,37 +20,37 @@ class ResolvedAddress
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=3)
      */
-    private $countryCode;
+    private ?string $countryCode;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $city;
+    private ?string $city;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $street;
+    private ?string $street;
 
     /**
      * @ORM\Column(type="string", length=16)
      */
-    private $postcode;
+    private ?string $postcode;
 
     /**
      * @ORM\Column(type="string", length=32, nullable=true)
      */
-    private $lat;
+    private ?string $lat;
 
     /**
      * @ORM\Column(type="string", length=32, nullable=true)
      */
-    private $lng;
+    private ?string $lng;
 
     public function getId(): ?int
     {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Repository\ResolvedAddressRepository;
-use App\Service\GeocoderInterface;
+use App\Service\GeocoderServiceInterface;
 use App\ValueObject\Address;
 use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,9 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CoordinatesController extends AbstractController
 {
-    private GeocoderInterface $geocoder;
+    private GeocoderServiceInterface $geocoder;
 
-    public function __construct(GeocoderInterface $geocoder)
+    public function __construct(GeocoderServiceInterface $geocoder)
     {
         $this->geocoder = $geocoder;
     }

@@ -1,0 +1,19 @@
+services:
+  google_maps.service:
+    class: App\Service\GoogleMapsService
+
+  here_maps.service:
+    class: App\Service\HereMapsService
+
+  cache_maps.service:
+    autowire: true
+    class: App\Service\CacheMapsService
+
+  App\Service\GeocoderService:
+    autowire: false
+    public: App\Service\GeocoderService
+    arguments:
+      $mapServices: [ '@cache_maps.service','@google_maps.service','@here_maps.service' ]
+      $resolvedAddressRepository: '@App\Repository\ResolvedAddressRepository'
+
+  App\Service\GeocoderServiceInterface: '@App\Service\GeocoderService'
